@@ -18,10 +18,10 @@ using HelloWorld::Greeter;
 using HelloWorld::HelloReply;
 using HelloWorld::HelloRequest;
 
-class CscClient
+class HelloWorldClient
 {
 public:
-    CscClient(std::shared_ptr<ChannelInterface> channel)
+    HelloWorldClient(std::shared_ptr<ChannelInterface> channel)
         : stub_(Greeter::NewStub(channel)) {}
 
     std::string SayHello(const std::string &text)
@@ -47,9 +47,9 @@ private:
 int main(int argc, char** argv)
 {
     std::string target_str = "localhost:50051";
-    CscClient csc_client(grpc::CreateChannel(target_str, grpc::InsecureChannelCredentials()));
+    HelloWorldClient helloworld_client(grpc::CreateChannel(target_str, grpc::InsecureChannelCredentials()));
     std::string text("Hello World");
-    std::string reply = csc_client.SayHello(text);
+    std::string reply = helloworld_client.SayHello(text);
     std::cout << "Received: " << reply << std::endl;
     return 0;
 }
