@@ -1,0 +1,10 @@
+*.pb.h
+*.pb.cc
+*.pb.cpp
+
+.vscode
+.idea
+
+build
+src/helloworld.server
+src/helloworld.client
