@@ -8,3 +8,4 @@
 build
 src/helloworld.server
 src/helloworld.client
+src/*.o
