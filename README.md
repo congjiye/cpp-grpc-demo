@@ -1,6 +1,6 @@
 # cpp-grpc-demo
 
-This is a simple project which introduce user to know how to use cpp grpc by Makefile.
+This is a simple project which introduce user to know how to use cpp grpc by Makefile and cmake.
 
 ## Installation
 
@@ -10,25 +10,39 @@ You can use the **install_grpc.sh** to install grpc. It will be installed into *
 
 Using the **gen_grpc_code.sh** to generate grpc files.
 
-## How to use
+## (Option 1) Use Makefile
 
-Execute the following commands from the src directory.
-
-### Build the source code.
+Execute the following commands in the src directory.
 
 ```shell
+# Go to src directory
+cd src
+
+# Build the source code.
 make -j
+
+# Run the server.
+./helloworld.server
+
+# On a different terminal, run the client.
+./helloworld.client
 ```
 
-### Run the server.
+## (Option 2) Use CMake
+
+Execute the following commands in the root directory.
 
 ```shell
-./helloword.server
-```
+# Go to cmake directory and create a build directory
+mkdir -p build && cd build
 
-### On a different terminal, run the client.
+# Build the source code.
+cmake .. && make
 
-```shell
+# Run the server.
+./helloworld.server
+
+# On a different termianl, run the client.
 ./helloworld.client
 ```
 
