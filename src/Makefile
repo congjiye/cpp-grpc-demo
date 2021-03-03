@@ -1,4 +1,5 @@
-GRPC_INSTALL_PATH = $(dirname $(pwd))
+CURRENT_PATH = $(shell pwd)
+GRPC_INSTALL_PATH = $(shell dirname $(CURRENT_PATH))
 export PKG_CONFIG_PATH=$(GRPC_INSTALL_PATH)/grpc/cmake/build/install/lib/pkgconfig
 
 HOST_SYSTEM = $(shell uname | cut -f 1 -d_)
